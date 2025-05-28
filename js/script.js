@@ -1,11 +1,18 @@
-const navtoggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-menu");
-navtoggle.addEventListener("click", () => {
-  navMenu.classList.toggle("nav-menu_visible");
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".nav-menu");
 
-  if (navMenu.classList.contains("nav-menu_visible")) {
-    navtoggle.setAttribute("aria-label", "Cerrar Menu");
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("nav-menu_visible");
+
+      if (navMenu.classList.contains("nav-menu_visible")) {
+        navToggle.setAttribute("aria-label", "Cerrar Menu");
+      } else {
+        navToggle.setAttribute("aria-label", "Abrir Menu");
+      }
+    });
   } else {
-    navtoggle.setAttribute("aria-label", "Abrir Menu");
+    console.error("No se encontraron los elementos .nav-toggle o .nav-menu");
   }
 });

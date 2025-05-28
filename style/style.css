@@ -94,11 +94,12 @@ nav {
     background-color: rgb(96, 103, 121);
     position: fixed;
     top: 60px;
-    left: 0;
+    right: 100%; /* Ocultar el menú por defecto */
     width: 100%;
     padding: 20px 0;
     height: calc(100% - 60px);
     overflow-y: auto;
+    transition: left 0.3s ease; /* Agregar transición para suavizar el movimiento */
   }
 
   .nav-toggle {
@@ -106,6 +107,6 @@ nav {
   }
 
   .nav-menu_visible {
-    left: 0;
+    left: 0; /* Mostrar el menú cuando tiene la clase */
   }
 }
